@@ -1,0 +1,19 @@
+@mixin page-top-name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #101828;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+@mixin label-css {
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #101828;
+    margin-bottom: 0.4rem !important;
+}

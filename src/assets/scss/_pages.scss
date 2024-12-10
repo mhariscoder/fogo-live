@@ -1,0 +1,50 @@
+.bank-transfer {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: calc(100% - 110px);
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+}
+
+.my-account {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: calc(100% - 14px);
+}
+
+// coin admin center
+.admin-card-container {
+    display: flex;
+    align-items: center;
+    .admin-card-image-box {
+        height: 54px;
+        width: 54px;
+        border-radius: 54px;
+        background-color: #D9D9D9;
+        margin-right: 15px;
+    }
+    
+    .admin-card-content-box {
+        
+        .title {
+            line-height: 20.16px;
+            font-size: 16px;
+            font-weight: 700;
+            
+        }
+        .description {
+            line-height: 17.64px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
+
