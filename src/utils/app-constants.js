@@ -8,7 +8,8 @@ export const ROUTES = {
     
     // super admin center
     becomeSuperAdmin: "/become-super-admin",
-    conAdminCenter: "/con-admin-center"
+    conAdminCenter: "/con-admin-center",
+    agency: "/agency"
 }
 
 export const validation = {

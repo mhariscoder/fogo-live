@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Form, Container, Row, Col, Card, Image, Button, Flex } from "react-bootstrap";
+import { Form, Container, Row, Col, Card, Image, Button, Tab, Tabs } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import PhoneInput from 'react-phone-input-2';
 import AccounAdded from "../components/offcanvasBody/AccountAdded";
@@ -14,29 +14,38 @@ import { PageNameContext, selectContext } from "../context/context";
 import AppLayout from "../Layouts/AppLayout";
 import { validation, validationText } from "../utils/app-constants";
 import { info } from "../utils/helper";
+import UserCard from "./../components/UserCard";
+import MyAdmins from "./ConAdminCenter/MyAdmins";
+import MyAgency from "./ConAdminCenter/MyAgency";
 
 const ConAdminCenter = () => {
-    const onSubmit = () => {
+    const [adminTab, setAdminTab] = useState('my-admins');
 
+    const onSubmit = () => {
+        
     }
 
     return (
         <>
-            <AppLayout isFooter handleClick={onSubmit}>
+            <AppLayout isFooter handleClick={onSubmit} style={{backgroundColor: "#efefef"}}>
                 <div className="container mt-3">
-                    <Card>
-                        <Card.Body>
-                            <div className="admin-card-container">
-                                <div className="admin-card-image-box">
-                                            
-                                </div>
-                                <div className="admin-card-content-box">
-                                    <Card.Title className="title">Admin Name Here</Card.Title>
-                                    <Card.Text className="description">ID 3023565256 <Image src={require('./../assets/images/document-copy.png')} /></Card.Text>
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
+                    <UserCard 
+                        title={`Admin Name Here`} 
+                        description={`ID 3023565256`}
+                        image={require('./../assets/images/person-1.png')}
+                        className={`mb-3 border-0`}
+                    />
+
+                    <div className="mb-3">
+                        <Tabs activeKey={adminTab} onSelect={(k) => setAdminTab(k)} className="admin-tabs">
+                            <Tab eventKey="my-admins" title="My Admins ( 5 )">
+                                <MyAdmins />
+                            </Tab>
+                            <Tab eventKey="my-agency" title="My Agency ( 3 )">
+                                <MyAgency />
+                            </Tab>
+                        </Tabs>
+                    </div>
                 </div>
             </AppLayout>
         </>
